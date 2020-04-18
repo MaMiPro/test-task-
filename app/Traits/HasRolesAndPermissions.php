@@ -116,6 +116,8 @@ public function deletePermissions(... $permissions )
  * @param mixed ...$permissions
  * @return HasRolesAndPermissions
  */
+
+ // удаление и переназначение 
 public function refreshPermissions(... $permissions )
 {
     $this->permissions()->detach();
