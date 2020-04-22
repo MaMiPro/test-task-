@@ -1,8 +1,12 @@
 <?php
 
 namespace App\Traits;
+
 use App\Role;
 use App\Permission;
+use App\Task;
+
+
 trait HasRolesAndPermissions
 {
     /**
@@ -117,11 +121,17 @@ public function deletePermissions(... $permissions )
  * @return HasRolesAndPermissions
  */
 
- // удаление и переназначение 
+ // удаление и переназначение
 public function refreshPermissions(... $permissions )
 {
     $this->permissions()->detach();
     return $this->givePermissionsTo($permissions);
 }
+
+public function tasks()
+{
+    return $this->hasMany(Task::class);
+}
+
 
 }

@@ -1,10 +1,14 @@
 <?php
 
 namespace App;
+
+//use App\Task;
 use App\Traits\HasRolesAndPermissions;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+
+
 class User extends Authenticatable
 {
     use Notifiable, HasRolesAndPermissions; //  трейт для модели user
